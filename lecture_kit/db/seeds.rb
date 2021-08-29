@@ -8,6 +8,8 @@ Category.destroy_all
 Category.reset_pk_sequence
 PlantCategory.destroy_all
 PlantCategory.reset_pk_sequence
+Watering.destroy_all
+Watering.reset_pk_sequence
 
 categories_arr = ["indoor", "outdoor"]
 categories_arr.each{|cat_name| Category.create(name: cat_name)}
@@ -34,5 +36,9 @@ PlantParenthood.create(plant_id: prayer_plant.id, person_id: joel.id, affection:
 PlantParenthood.create(plant_id: basil.id, person_id: joel.id, affection:1)
 PlantParenthood.create(plant_id: basil.id, person_id: sylwia.id, affection:10)
 PlantParenthood.create(plant_id: corn_tree.id, person_id: sylwia.id, affection:10)
+
+Watering.create(waterer: joel, wateree: basil)
+Watering.create(waterer: joel, wateree: basil)
+Watering.create(waterer: sylwia, wateree: basil)
 
 puts "🌱 🌱 🌱  SEEDED 🌱 🌱 🌱 🌱 "
